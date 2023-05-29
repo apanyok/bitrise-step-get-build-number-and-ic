@@ -61,3 +61,7 @@ outputs:
     opts:
       title: "Part after the `+` in the `PUBSPEC_VERSION`"
       summary: "Example: `10`"
+  - PUBSPEC_VERSION_NAME:
+    opts:
+      title: "Part before the `+` in the `PUBSPEC_VERSION`"
+      summary: "Example: `1.2.43`"

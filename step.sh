@@ -12,6 +12,23 @@ perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)(\+)(\d+)$/$1.$2.$3.($4+1)/e' $pubsp
 git add pubspec.yaml
 git commit -m 'increment build number'
 git push
+
+VERSION=`awk '/^version:/ {print $2}' ${pubspec_path}`
+
+IFS='+'
+read -a split <<< "${VERSION}"
+
+# echo "PUBSPEC_VERSION: ${VERSION}"
+# echo "PUBSPEC_VERSION_NAME: ${split[0]}"
+# echo "PUBSPEC_BUILD_NUMBER: ${split[1]}"
+
+#
+# --- Export Environment Variables for other Steps:
+# You can export Environment Variables for other Steps with
+#  envman, which is automatically installed by `bitrise setup`.
+# A very simple example:
+envman add --key PUBSPEC_VERSION_NAME --value "${split[0]}"
+envman add --key PUBSPEC_BUILD_NUMBER --value "${split[1]}"
 # echo "PUBSPEC_VERSION: ${VERSION}"
 # echo "PUBSPEC_VERSION_NAME: ${split[0]}"
 # echo "PUBSPEC_BUILD_NUMBER: ${split[1]}"
