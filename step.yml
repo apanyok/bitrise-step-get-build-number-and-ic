@@ -8,11 +8,11 @@
 # - Bitrise CLI guides: http://devcenter.bitrise.io/bitrise-cli/
 
 title: |-
-  get build number and ic
+  increment build number
 summary: |
-  get-build-number-and-ic
+  increment build number
 description: |
-  get-build-number-and-ic
+  increment build number
 website: https://github.com/apanyok/bitrise-step-get-build-number-and-ic
 source_code_url: https://github.com/apanyok/bitrise-step-get-build-number-and-ic
 support_url: https://github.com/apanyok/bitrise-step-get-build-number-and-ic/issues
