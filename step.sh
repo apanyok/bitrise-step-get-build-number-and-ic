@@ -8,7 +8,7 @@ then
     exit 1
 fi
 
-perl -i -pe 's/^(version:)(\s*)((\d+\.)+\d+)(\+)(\d+)$/$1.$2.$ENV{TAG}.$5.($6+1)/e' $pubspec_path
+perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)(\+)(\d+)$/$1.($2+1).$3.($4+1)/e' $pubspec_path
 git add pubspec.yaml
 git commit -m 'increment build number'
 git push
